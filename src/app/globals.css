@@ -1021,7 +1021,14 @@ svg {
 
 .officer p {
   margin: 0;
-  color: var(--gray);
+}
+
+.officer-name {
+  font-family: var(--label);
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 /* Contact */

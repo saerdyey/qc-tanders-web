@@ -20,8 +20,14 @@ const values = [
   { title: "Give back", body: "Our charity runs support children, schools and communities across Rizal and Metro Manila." },
 ];
 
-// Placeholder: replace with your officers' road names.
-const officers = ["President", "Vice President", "Road Captain", "Sergeant at Arms", "Secretary", "Treasurer"];
+const officers = [
+  { role: "President", name: "Yorms" },
+  { role: "Vice President", name: "Andres" },
+  { role: "Road Captain", name: "Black" },
+  { role: "Sergeant at Arms", name: "Andres" },
+  { role: "Secretary", name: "El" },
+  { role: "Treasurer", name: "Iya" },
+];
 
 export default function AboutPage() {
   return (
@@ -96,10 +102,10 @@ export default function AboutPage() {
           <p className="tape">Officers</p>
           <h2>Who runs the pack</h2>
           <div className="officers">
-            {officers.map((role) => (
+            {officers.map(({ role, name }) => (
               <div className="officer" key={role}>
                 <p className="tape tape-small">{role}</p>
-                <p>Road name</p>
+                <p className="officer-name">{name}</p>
               </div>
             ))}
           </div>
