@@ -65,6 +65,7 @@ export function rideJsonLd(ride: Ride): Json {
       "@type": "Place",
       name: ride.venue,
       address: ride.area ?? ride.venue,
+      ...(ride.mapUrl && { hasMap: ride.mapUrl }),
     },
     organizer: ride.host
       ? { "@type": "Organization", name: ride.host }
@@ -94,7 +95,7 @@ export function merchJsonLd(items: MerchItem[], path: string): Json {
             "@type": "Offer",
             price: item.price,
             priceCurrency: "PHP",
-            availability: "https://schema.org/InStock",
+            availability: item.outOfStock ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
             seller: { "@id": organizationId },
           },
         }),

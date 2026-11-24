@@ -1138,3 +1138,55 @@ svg {
   height: auto;
   justify-self: center;
 }
+
+/* Out-of-stock merch */
+.section-light .btn-ghost {
+  background: transparent;
+  color: var(--black);
+  border-color: var(--black);
+}
+
+.section-light .btn-ghost:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.merch-card-out .merch-photo {
+  opacity: 0.45;
+}
+
+/* Past rides */
+.ride-card-past {
+  opacity: 0.6;
+  border-top-color: var(--gray-dark);
+}
+
+.ride-card-past:hover {
+  opacity: 1;
+}
+
+.past-rides {
+  margin-top: 3rem;
+}
+
+.past-rides summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.past-rides summary::-webkit-details-marker {
+  display: none;
+}
+
+.past-rides[open] summary {
+  margin-bottom: 2.5rem;
+}
+
+.past-rides .when-open,
+.past-rides[open] .when-closed {
+  display: none;
+}
+
+.past-rides[open] .when-open {
+  display: inline;
+}

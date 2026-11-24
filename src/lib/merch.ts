@@ -2,11 +2,12 @@ import { getMerchImages, type MediaImage } from "./media";
 
 // Product info for each merch_*.jpg in public/images, keyed by filename.
 // A merch photo without an entry still appears, with a generic name.
-// Leave `price` out to show "Message for price".
+// Leave `price` out to show "Message for price". Set `outOfStock: true` when sold out.
 type MerchInfo = {
   name: string;
   description: string;
   price?: number;
+  outOfStock?: boolean;
   details?: string[];
   badge?: string;
 };
@@ -17,7 +18,7 @@ const merchInfo: Record<string, MerchInfo> = {
     description:
       "Black oversized tee. QC Tanders script on the chest; the full skull, chain and city skyline print on the back with “Solid Brotherhood Forever”.",
     details: ["Front + back print", "Black", "Oversized fit"],
-    badge: "New drop",
+    outOfStock: true,
   },
 };
 

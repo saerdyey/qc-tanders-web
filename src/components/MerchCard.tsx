@@ -4,9 +4,13 @@ import { site } from "@/lib/site";
 
 export function MerchCard({ item, compact }: { item: MerchItem; compact?: boolean }) {
   return (
-    <article className="merch-card" id={item.slug}>
+    <article className={item.outOfStock ? "merch-card merch-card-out" : "merch-card"} id={item.slug}>
       <div className="merch-visual">
-        {item.badge && <span className="tape tape-small merch-badge">{item.badge}</span>}
+        {item.outOfStock ? (
+          <span className="tape tape-small merch-badge">Out of stock</span>
+        ) : (
+          item.badge && <span className="tape tape-small merch-badge">{item.badge}</span>
+        )}
         <Image
           src={item.image.src}
           alt={item.image.alt}
@@ -18,7 +22,7 @@ export function MerchCard({ item, compact }: { item: MerchItem; compact?: boolea
       <div className="merch-body">
         <div className="merch-title">
           <h3>{item.name}</h3>
-          <p className="merch-price">{formatPrice(item.price)}</p>
+          <p className="merch-price">{item.outOfStock ? "Out of stock" : formatPrice(item.price)}</p>
         </div>
         <p className="muted">{item.description}</p>
         {!compact && (
@@ -30,8 +34,13 @@ export function MerchCard({ item, compact }: { item: MerchItem; compact?: boolea
                 ))}
               </ul>
             )}
-            <a className="btn btn-block" href={site.messenger} target="_blank" rel="noopener">
-              Order on Messenger
+            <a
+              className={item.outOfStock ? "btn btn-block btn-ghost" : "btn btn-block"}
+              href={site.messenger}
+              target="_blank"
+              rel="noopener"
+            >
+              {item.outOfStock ? "Ask about a restock" : "Order on Messenger"}
             </a>
           </>
         )}

@@ -6,7 +6,7 @@ import { PhotoGallery } from "@/components/PhotoGallery";
 import { RideCard } from "@/components/RideCard";
 import { photos } from "@/lib/images";
 import { getMerch } from "@/lib/merch";
-import { rides } from "@/lib/rides";
+import { getRideSchedule } from "@/lib/rides";
 import { site } from "@/lib/site";
 
 const mottos = ["Ride free", "Respect the road", "Colors are earned", "No one rides alone", "Loyalty above all"];
@@ -20,6 +20,7 @@ const code = [
 
 export default async function Home() {
   const merch = await getMerch();
+  const { upcoming } = await getRideSchedule();
   return (
     <>
       <section className="hero">
@@ -126,11 +127,15 @@ export default async function Home() {
               Full calendar →
             </Link>
           </div>
-          <div className="ride-list">
-            {rides.slice(0, 3).map((ride) => (
-              <RideCard key={ride.slug} ride={ride} />
-            ))}
-          </div>
+          {upcoming.length > 0 ? (
+            <div className="ride-list">
+              {upcoming.slice(0, 3).map((ride) => (
+                <RideCard key={ride.slug} ride={ride} />
+              ))}
+            </div>
+          ) : (
+            <p className="muted">New rides coming soon. Follow us on Facebook for the next one.</p>
+          )}
         </div>
       </section>
 

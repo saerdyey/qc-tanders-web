@@ -76,7 +76,17 @@ export default async function RidePage({ params }: PageProps<"/rides/[slug]">) {
               <dt>Time</dt>
               <dd>{formatRideTime(ride)}</dd>
               <dt>Where</dt>
-              <dd>{formatRideLocation(ride)}</dd>
+              <dd>
+                {formatRideLocation(ride)}
+                {ride.mapUrl && (
+                  <>
+                    <br />
+                    <a href={ride.mapUrl} target="_blank" rel="noopener">
+                      Open in Google Maps
+                    </a>
+                  </>
+                )}
+              </dd>
               {ride.host && (
                 <>
                   <dt>Hosted by</dt>

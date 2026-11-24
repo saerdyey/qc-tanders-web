@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { RideCard } from "@/components/RideCard";
 import { photos } from "@/lib/images";
 import { pageMetadata } from "@/lib/metadata";
-import { rides } from "@/lib/rides";
+import { getRideSchedule } from "@/lib/rides";
 
 export const metadata: Metadata = pageMetadata({
   title: "Upcoming Rides, Bike Nights & Events",
@@ -13,7 +13,8 @@ export const metadata: Metadata = pageMetadata({
   path: "/rides",
 });
 
-export default function RidesPage() {
+export default async function RidesPage() {
+  const { upcoming, past } = await getRideSchedule();
   return (
     <>
       <PageHero
@@ -24,10 +25,32 @@ export default function RidesPage() {
         photo={photos.nightStreet.src}
       />
       <section className="section">
-        <div className="container ride-list">
-          {rides.map((ride) => (
-            <RideCard key={ride.slug} ride={ride} />
-          ))}
+        <div className="container">
+          <h2>Upcoming</h2>
+          {upcoming.length > 0 ? (
+            <div className="ride-list">
+              {upcoming.map((ride) => (
+                <RideCard key={ride.slug} ride={ride} />
+              ))}
+            </div>
+          ) : (
+            <p className="muted">New rides coming soon. Follow us on Facebook for the next one.</p>
+          )}
+          {/* Past rides stay in the HTML for search engines, folded away until asked for. */}
+          {past.length > 0 && (
+            <details className="past-rides">
+              <summary className="btn btn-ghost">
+                <span className="when-closed">Show past rides ({past.length})</span>
+                <span className="when-open">Hide past rides</span>
+              </summary>
+              <h2>Past rides</h2>
+              <div className="ride-list">
+                {past.map((ride) => (
+                  <RideCard key={ride.slug} ride={ride} past />
+                ))}
+              </div>
+            </details>
+          )}
         </div>
       </section>
       <JoinBand />

@@ -1,3 +1,5 @@
+import { cacheLife } from "next/cache";
+
 export type RideKind = "Tambike" | "Club ride" | "Guest event";
 
 export type Ride = {
@@ -14,13 +16,15 @@ export type Ride = {
   timeNote?: string;
   venue: string;
   area?: string;
+  // Google Maps link for the venue.
+  mapUrl?: string;
   // Set when another club hosts the event.
   host?: string;
   who: string;
   tags: string[];
 };
 
-// Keep these in date order. Remove events once they have passed.
+// Keep these in date order. Past events move to the "Past rides" list on their own.
 export const rides: Ride[] = [
   {
     slug: "tambike-tasha-cafe-2026-10-30",
@@ -99,10 +103,48 @@ export const rides: Ride[] = [
     who: "Members, prospects and hang-arounds",
     tags: ["Overnight", "Camping", "Club only"],
   },
+  {
+    slug: "tambike-tinta-at-kape-2026-11-27",
+    title: "Tambike @ Tinta At Kape",
+    kind: "Tambike",
+    summary: "Bike night at Tinta At Kape. Bring your bike, meet the crew and hang out from 8 PM onwards.",
+    description: [
+      "Tambike is our bike night: tambay plus bikes. No route and no agenda, just the crew, the bikes lined up out front and good conversation until late.",
+      "Riders and friends are welcome. If you are thinking about hanging around with the club, this is the easiest way to meet everyone.",
+    ],
+    start: "2026-11-27T20:00:00+08:00",
+    timeNote: "onwards",
+    venue: "Tinta At Kape",
+    mapUrl: "https://maps.app.goo.gl/eUjekZTthSQ3zuV77",
+    who: "Open to all riders and friends",
+    tags: ["Bike night", "Open to all"],
+  },
 ];
 
 export function getRide(slug: string) {
   return rides.find((ride) => ride.slug === slug);
+}
+
+// The current time, refreshed hourly, so pages stay pre-built but re-sort as events pass.
+async function currentTime() {
+  "use cache";
+  cacheLife("hours");
+  return Date.now();
+}
+
+// An event counts as past once its last day is over in Manila.
+function isPast(ride: Ride, now: number) {
+  const lastDay = (ride.end ?? ride.start).slice(0, 10);
+  return now > new Date(`${lastDay}T23:59:59+08:00`).getTime();
+}
+
+export async function getRideSchedule() {
+  const now = await currentTime();
+  return {
+    upcoming: rides.filter((ride) => !isPast(ride, now)),
+    // Most recent first.
+    past: rides.filter((ride) => isPast(ride, now)).reverse(),
+  };
 }
 
 export const hasTime = (ride: Ride) => ride.start.includes("T");

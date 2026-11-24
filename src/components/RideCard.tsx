@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { formatRideDate, formatRideLocation, formatRideTime, type Ride } from "@/lib/rides";
 
-export function RideCard({ ride }: { ride: Ride }) {
+export function RideCard({ ride, past }: { ride: Ride; past?: boolean }) {
   return (
-    <article className="ride-card">
+    <article className={past ? "ride-card ride-card-past" : "ride-card"}>
       <p className="ride-date">
         <time dateTime={ride.start}>{formatRideDate(ride)}</time>
         <span> · {ride.kind}</span>
