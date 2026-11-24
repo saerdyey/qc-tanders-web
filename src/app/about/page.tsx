@@ -17,7 +17,7 @@ const values = [
   { title: "Brotherhood", body: "Members show up for each other: breakdowns, birthdays, hospital visits and moving days." },
   { title: "Respect the road", body: "We follow traffic laws, keep exhausts legal and treat every town like we want to be welcomed back." },
   { title: "Keep them running", body: "We share tools, parts and know-how so every bike in the pack makes it to the next ride." },
-  { title: "Give back", body: "Our charity runs support children, schools and communities across Rizal and Metro Manila." },
+  { title: "Give back", body: "Our charity runs support children, schools and communities." },
 ];
 
 const officers = [
