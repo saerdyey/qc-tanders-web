@@ -1190,3 +1190,14 @@ svg {
 .past-rides[open] .when-open {
   display: inline;
 }
+
+/* Club name inside the home page h1, so the main heading carries it */
+.h1-kicker {
+  display: block;
+  font-family: var(--label);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.75rem;
+}

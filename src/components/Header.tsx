@@ -8,7 +8,7 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link href="/" className="brand" aria-label={`${site.name} home`}>
-          <Logo size={48} priority className="brand-logo" />
+          <Logo size={48} eager className="brand-logo" />
           <span className="brand-text">QC Tanders</span>
         </Link>
         <nav aria-label="Main" className="main-nav">

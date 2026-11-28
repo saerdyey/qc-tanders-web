@@ -3,18 +3,19 @@ import { photos } from "@/lib/images";
 
 type Props = {
   size: number;
-  priority?: boolean;
+  // Above-the-fold logos load right away instead of lazily.
+  eager?: boolean;
   className?: string;
 };
 
-export function Logo({ size, priority, className }: Props) {
+export function Logo({ size, eager, className }: Props) {
   return (
     <Image
       src={photos.logo.src}
       alt={photos.logo.alt}
       width={size}
       height={size}
-      priority={priority}
+      loading={eager ? "eager" : undefined}
       className={className}
     />
   );

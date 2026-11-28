@@ -5,7 +5,7 @@ export const site = {
   legalName: "QC Tanders Riding Club",
   tagline: "Classic Motorcycle Riding Club in Quezon City",
   description:
-    "QC Tanders RC is a classic motorcycle riding club and brotherhood from Tandang Sora, Quezon City, Philippines. Night rides, long-distance runs, charity rides and club support gear.",
+    "QC Tanders RC is a classic motorcycle riding club and brotherhood from Tandang Sora, Quezon City. Weekly tambike bike nights, club rides and support gear.",
   // Set NEXT_PUBLIC_SITE_URL in production so canonical URLs and the sitemap are correct.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.qctanders.com",
   locale: "en_PH",

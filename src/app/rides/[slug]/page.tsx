@@ -9,6 +9,7 @@ import { site } from "@/lib/site";
 
 const shortDate = new Intl.DateTimeFormat("en-PH", {
   month: "short",
+  day: "numeric",
   year: "numeric",
   timeZone: "Asia/Manila",
 });
@@ -25,7 +26,8 @@ export async function generateMetadata({ params }: PageProps<"/rides/[slug]">): 
   const path = `/rides/${ride.slug}`;
   return pageMetadata({
     title: `${ride.title}, ${shortDate.format(new Date(ride.start))}`,
-    description: ride.summary,
+    // Lead with the facts people search for: when and where.
+    description: `${formatRideDate(ride)}, ${formatRideTime(ride)} at ${formatRideLocation(ride)}. ${ride.summary}`,
     path,
     type: "article",
     image: `${path}/opengraph-image`,

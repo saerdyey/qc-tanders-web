@@ -31,6 +31,12 @@ export function organizationJsonLd(): Json {
     logo: absoluteUrl(site.logo),
     image: absoluteUrl("/opengraph-image"),
     foundingDate: site.foundingYear,
+    foundingLocation: {
+      "@type": "Place",
+      name: "Tandang Sora, Quezon City",
+      address: { "@type": "PostalAddress", ...site.address },
+    },
+    slogan: "Ride free. Ride safe. Ride together.",
     sport: "Motorcycling",
     areaServed: "Metro Manila",
     address: { "@type": "PostalAddress", ...site.address },

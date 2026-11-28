@@ -13,7 +13,7 @@ type Props = {
 export function PageHero({ crumbs, title, eyebrow, lead, photo }: Props) {
   return (
     <section className="page-hero">
-      {photo && <Image src={photo} alt="" fill priority sizes="100vw" className="page-hero-photo" />}
+      {photo && <Image src={photo} alt="" fill fetchPriority="high" sizes="100vw" className="page-hero-photo" />}
       <div className="container">
         <Breadcrumbs items={crumbs} />
         {eyebrow && <p className="tape">{eyebrow}</p>}

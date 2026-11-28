@@ -54,7 +54,10 @@ export default async function MerchPage() {
         </div>
       </section>
 
-      <JsonLd data={merchJsonLd(merch, "/merch")} />
+      {/* Google rejects Product data without a price, so only priced items are listed. */}
+      {merch.some((item) => item.price !== undefined) && (
+        <JsonLd data={merchJsonLd(merch.filter((item) => item.price !== undefined), "/merch")} />
+      )}
     </>
   );
 }

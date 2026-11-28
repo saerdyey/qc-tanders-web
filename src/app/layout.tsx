@@ -10,7 +10,7 @@ import "./globals.css";
 const gothic = Grenze_Gotisch({
   variable: "--font-gothic",
   subsets: ["latin"],
-  weight: ["600", "800"],
+  weight: ["800"],
 });
 
 const display = Oswald({

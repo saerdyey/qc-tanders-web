@@ -28,14 +28,16 @@ export default async function Home() {
           src={photos.backPatch.src}
           alt={photos.backPatch.alt}
           fill
-          priority
+          preload
           sizes="100vw"
           placeholder="blur"
           className="hero-photo"
         />
         <div className="container hero-content">
-          <p className="tape">Quezon City · Est. {site.foundingYear}</p>
-          <h1>Brotherhood of the Open Road</h1>
+          <p className="tape">Tandang Sora, Quezon City · Est. {site.foundingYear}</p>
+          <h1>
+            <span className="h1-kicker">{site.name}</span> Brotherhood of the Open Road
+          </h1>
           <p className="lead">
             {site.name} is a classic motorcycle riding club in Quezon City. Leather, chrome and
             midnight runs, with brothers who ride for each other and never leave one behind.
