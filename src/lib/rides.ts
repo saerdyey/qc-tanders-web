@@ -152,18 +152,18 @@ export const rides: Ride[] = [
     tags: ["Bike night", "Open to all"],
   },
   {
-    slug: "christmas-barbeque-gathering-2026",
-    title: "Christmas Barbeque Gathering",
+    slug: "year-end-barbeque-gathering-2026",
+    title: "Year-End Barbeque Gathering",
     kind: "Club event",
-    summary: "The club's Christmas get-together: food on the grill, the whole crew and a toast to the year on the road.",
+    summary: "The club's year-end get-together: food on the grill, the whole crew and a toast to the year on the road.",
     description: [
-      "We close out the riding year together with a Christmas barbeque. Good food, good company and the whole family in one place.",
+      "We close out the riding year together with a barbeque. Good food, good company and the whole family in one place.",
       "Venue and time to be announced. Follow us on Facebook or message us for updates.",
     ],
     start: "2026-12-20",
     venue: "Location TBA",
     who: "To be announced",
-    tags: ["Christmas", "Barbeque"],
+    tags: ["Year-end", "Barbeque"],
   },
   {
     slug: "tambike-the-hungry-bowl-and-cafe-2027-01-08",
