@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     q: "How long is the prospect period?",
-    a: "It depends on you. Most prospects ride with the club for three to six months before a vote. What counts is showing up and showing respect.",
+    a: "At least six months. Prospects ride with the club for a minimum of six months before a vote. What counts is showing up and showing respect.",
   },
   {
     q: "Is QC Tanders an outlaw club?",

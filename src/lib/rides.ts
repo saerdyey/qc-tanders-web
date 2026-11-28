@@ -1,6 +1,6 @@
 import { cacheLife } from "next/cache";
 
-export type RideKind = "Tambike" | "Club ride" | "Guest event";
+export type RideKind = "Tambike" | "Club ride" | "Club event" | "Guest event";
 
 export type Ride = {
   slug: string;
@@ -119,6 +119,116 @@ export const rides: Ride[] = [
     who: "Open to all riders and friends",
     tags: ["Bike night", "Open to all"],
   },
+  {
+    slug: "tambike-mood-cafe-2026-12-04",
+    title: "Tambike @ Mood Cafe",
+    kind: "Tambike",
+    summary: "Bike night at Mood Cafe. Bring your bike, meet the crew and hang out from 8 to 11 PM.",
+    description: [
+      "Tambike is our bike night: tambay plus bikes. No route and no agenda, just the crew, the bikes lined up out front and good conversation until late.",
+      "Riders and friends are welcome. If you are thinking about hanging around with the club, this is the easiest way to meet everyone.",
+    ],
+    start: "2026-12-04T20:00:00+08:00",
+    end: "2026-12-04T23:00:00+08:00",
+    venue: "Mood Cafe",
+    mapUrl: "https://share.google/pletAM4gHrz9sH01w",
+    who: "Open to all riders and friends",
+    tags: ["Bike night", "Open to all"],
+  },
+  {
+    slug: "tambike-cafe-pedrista-2026-12-11",
+    title: "Tambike @ Cafe Pedrista",
+    kind: "Tambike",
+    summary: "Bike night at Cafe Pedrista. Bring your bike, meet the crew and hang out from 8 to 11 PM.",
+    description: [
+      "Tambike is our bike night: tambay plus bikes. No route and no agenda, just the crew, the bikes lined up out front and good conversation until late.",
+      "Riders and friends are welcome. If you are thinking about hanging around with the club, this is the easiest way to meet everyone.",
+    ],
+    start: "2026-12-11T20:00:00+08:00",
+    end: "2026-12-11T23:00:00+08:00",
+    venue: "Cafe Pedrista",
+    mapUrl: "https://maps.app.goo.gl/dpuywHnjNzcsRZ2W7",
+    who: "Open to all riders and friends",
+    tags: ["Bike night", "Open to all"],
+  },
+  {
+    slug: "christmas-barbeque-gathering-2026",
+    title: "Christmas Barbeque Gathering",
+    kind: "Club event",
+    summary: "The club's Christmas get-together: food on the grill, the whole crew and a toast to the year on the road.",
+    description: [
+      "We close out the riding year together with a Christmas barbeque. Good food, good company and the whole family in one place.",
+      "Venue and time to be announced. Follow us on Facebook or message us for updates.",
+    ],
+    start: "2026-12-20",
+    venue: "Location TBA",
+    who: "To be announced",
+    tags: ["Christmas", "Barbeque"],
+  },
+  {
+    slug: "tambike-the-hungry-bowl-and-cafe-2027-01-08",
+    title: "Tambike @ The Hungry Bowl and Cafe",
+    kind: "Tambike",
+    summary: "Bike night at The Hungry Bowl and Cafe. Bring your bike, meet the crew and hang out from 8 PM onwards.",
+    description: [
+      "Tambike is our bike night: tambay plus bikes. No route and no agenda, just the crew, the bikes lined up out front and good conversation until late.",
+      "Riders and friends are welcome. If you are thinking about hanging around with the club, this is the easiest way to meet everyone.",
+    ],
+    start: "2027-01-08T20:00:00+08:00",
+    timeNote: "onwards",
+    venue: "The Hungry Bowl and Cafe",
+    mapUrl: "https://maps.app.goo.gl/QRZNgki7Q6YSbF787",
+    who: "Open to all riders and friends",
+    tags: ["Bike night", "Open to all"],
+  },
+  {
+    slug: "tambike-sip-and-sit-2027-01-15",
+    title: "Tambike @ Sip & Sit",
+    kind: "Tambike",
+    summary: "Bike night at Sip & Sit. Bring your bike, meet the crew and hang out from 8 PM onwards.",
+    description: [
+      "Tambike is our bike night: tambay plus bikes. No route and no agenda, just the crew, the bikes lined up out front and good conversation until late.",
+      "Riders and friends are welcome. If you are thinking about hanging around with the club, this is the easiest way to meet everyone.",
+    ],
+    start: "2027-01-15T20:00:00+08:00",
+    timeNote: "onwards",
+    venue: "Sip & Sit",
+    mapUrl: "https://maps.app.goo.gl/kuMbGb4cTcmrj8eB8",
+    who: "Open to all riders and friends",
+    tags: ["Bike night", "Open to all"],
+  },
+  {
+    slug: "tambike-pinstripes-cycles-coffee-shack-2027-01-22",
+    title: "Tambike @ Pinstripes Cycles & Coffee Shack",
+    kind: "Tambike",
+    summary: "Bike night at Pinstripes Cycles & Coffee Shack. Bring your bike, meet the crew and hang out from 8 to 11 PM.",
+    description: [
+      "Tambike is our bike night: tambay plus bikes. No route and no agenda, just the crew, the bikes lined up out front and good conversation until late.",
+      "Riders and friends are welcome. If you are thinking about hanging around with the club, this is the easiest way to meet everyone.",
+    ],
+    start: "2027-01-22T20:00:00+08:00",
+    end: "2027-01-22T23:00:00+08:00",
+    venue: "Pinstripes Cycles & Coffee Shack – Dark Horse Manila",
+    mapUrl: "https://maps.app.goo.gl/8fp2uxJaDf4F4dAE8",
+    who: "Open to all riders and friends",
+    tags: ["Bike night", "Open to all"],
+  },
+  {
+    slug: "tambike-tasha-cafe-2027-01-29",
+    title: "Tambike @ Tasha Café",
+    kind: "Tambike",
+    summary: "Bike night at Tasha Café. Bring your bike, meet the crew and hang out from 8 PM onwards.",
+    description: [
+      "Tambike is our bike night: tambay plus bikes. No route and no agenda, just the crew, the bikes lined up out front and good conversation until late.",
+      "Riders and friends are welcome. If you are thinking about hanging around with the club, this is the easiest way to meet everyone.",
+    ],
+    start: "2027-01-29T20:00:00+08:00",
+    timeNote: "onwards",
+    venue: "Tasha Café",
+    mapUrl: "https://maps.app.goo.gl/CZhVAV946XidsPABA",
+    who: "Open to all riders and friends",
+    tags: ["Bike night", "Open to all"],
+  },
 ];
 
 export function getRide(slug: string) {
@@ -173,6 +283,10 @@ export function formatRideDate(ride: Ride) {
 export function formatRideTime(ride: Ride) {
   if (!hasTime(ride)) return "Time TBA";
   const time = timeFormat.format(new Date(ride.start));
+  // Same-day end time, e.g. "8:00 PM – 11:00 PM".
+  if (ride.end?.includes("T") && ride.end.slice(0, 10) === ride.start.slice(0, 10)) {
+    return `${time} – ${timeFormat.format(new Date(ride.end))}`;
+  }
   return ride.timeNote ? `${time} ${ride.timeNote}` : time;
 }
 

@@ -56,7 +56,7 @@ export default async function RidePage({ params }: PageProps<"/rides/[slug]">) {
             {ride.description.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            {ride.kind !== "Tambike" && (
+            {(ride.kind === "Club ride" || ride.kind === "Guest event") && (
               <>
                 <h2>What to bring</h2>
                 <ul className="checklist">
